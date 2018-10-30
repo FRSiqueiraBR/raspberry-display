@@ -50,9 +50,8 @@ bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
 
-
-# Load default font.
-font = ImageFont.load_default()
+# Load FreeSans
+font = ImageFont.truetype('FreeSans.ttf', 15)
 
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
