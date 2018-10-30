@@ -51,16 +51,16 @@ bottom = height-padding
 x = 0
 
 # Load FreeSans
-font = ImageFont.truetype('FreeSans.ttf', 15)
-
+font_time = ImageFont.truetype('FreeSans.ttf', 19)
+font_date = ImageFont.load_default()
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    now = time.strftime('%X %x')
-    text = "Hello World"
+    now = time.strftime('%X-%a')
+    date = time.strftime('%x')
 
-    draw.text((x, top), now, font=font, fill=255)
-    draw.text((x, top+8), text, font=font, fill=255)
+    draw.text((x, top), date, font=font_date, fill=255)
+    draw.text((x, top+8), now, font=font_time, fill=255)
 
     disp.image(image)
     disp.display()
